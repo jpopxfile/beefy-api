@@ -21,7 +21,11 @@ async function apy(ctx) {
 
     Object.values(dataSimple).map(item => {
       const symbol = item.symbol.toLowerCase();
-      const apy = compound(parseFloat(item.estimated_ar), process.env.FORTUBE_HPY, 1, 0.95);
+
+      const lowerFeeVaults = ['fil', 'atom', 'xtz'];
+      const fee = lowerFeeVaults.includes(symbol) ? 0.02 : 0.05;
+
+      const apy = compound(parseFloat(item.estimated_ar), process.env.FORTUBE_HPY, 1, 1 - fee);
       apys[symbol] = apy;
     });
 
