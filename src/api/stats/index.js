@@ -35,23 +35,36 @@ async function apy(ctx) {
       apys[`fortube-${item.token_symbol.toLowerCase()}`] += parseFloat(item.deposit_interest_rate);
     });
 
-    const fryApys = await getFryApys();
-    apys['fry-burger-v2'] = compound(fryApys.burger, process.env.FRY_HPY, 1, 0.95);
+    console.log('BEFORE:', Date.now());
 
-    const baseCakeApy = await getBaseCakeApy();
-    apys['cake-cake'] = compound(baseCakeApy, process.env.CAKE_HPY, 1, 0.94);
+    const apy = {};
+    const values = await Promise.all([
+      getFryApys(), 
+      getBaseCakeApy(), 
+      getCakeLpApys(), 
+      getCakeApys()
+    ]);
+  
+    apy.fry = values[0];
+    apy.cake = values[1];
+    apy.cakeLp = values[2];
+    apy.syrup = values[3];
+  
+    console.log('AFTER:', Date.now());
 
-    const cakeLpApys = await getCakeLpApys();
-    apys['cake-cake-bnb'] = compound(cakeLpApys['cake-cake-bnb'], process.env.CAKE_LP_HPY, 1, 0.955);
-    apys['cake-busd-bnb'] = compound(cakeLpApys['cake-busd-bnb'], process.env.CAKE_LP_HPY, 1, 0.955);
-    apys['cake-usdt-busd'] = compound(cakeLpApys['cake-usdt-busd'], process.env.CAKE_LP_HPY, 1, 0.955);
-    apys['cake-btcb-bnb'] = compound(cakeLpApys['cake-btcb-bnb'], process.env.CAKE_LP_HPY, 1, 0.955);
+    // Compound
+    apys['fry-burger-v2'] = compound(apy.fry.burger, process.env.FRY_HPY, 1, 0.95);
+    
+    apys['cake-cake'] = compound(apy.cake, process.env.CAKE_HPY, 1, 0.94);
 
-    const cakeApys = await getCakeApys();
-    apys['cake-hard'] = compound(cakeApys['cake-hard'], process.env.CAKE_HPY, 1, 0.94);
-    apys['cake-broobee'] = compound(cakeApys['cake-broobee'], process.env.CAKE_HPY, 1, 0.94);
-    apys['cake-stax'] = compound(cakeApys['cake-stax'], process.env.CAKE_HPY, 1, 0.94);
-    apys['cake-nya'] = compound(cakeApys['cake-nya'], process.env.CAKE_HPY, 1, 0.94);
+    apys['cake-cake-bnb'] = compound(apy.cakeLp['cake-cake-bnb'], process.env.CAKE_LP_HPY, 1, 0.955);
+    apys['cake-busd-bnb'] = compound(apy.cakeLp['cake-busd-bnb'], process.env.CAKE_LP_HPY, 1, 0.955);
+    apys['cake-usdt-busd'] = compound(apy.cakeLp['cake-usdt-busd'], process.env.CAKE_LP_HPY, 1, 0.955);
+    apys['cake-btcb-bnb'] = compound(apy.cakeLp['cake-btcb-bnb'], process.env.CAKE_LP_HPY, 1, 0.955);
+    
+    apys['cake-hard'] = compound(apy.syrup['cake-hard'], process.env.CAKE_HPY, 1, 0.94);    
+    apys['cake-broobee'] = compound(apy.syrup['cake-broobee'], process.env.CAKE_HPY, 1, 0.94);
+    apys['cake-stax'] = compound(apy.syrup['cake-stax'], process.env.CAKE_HPY, 1, 0.94);
 
     // FIXME: deprecated pools
     apys['cake-syrup-ctk'] = 0;
