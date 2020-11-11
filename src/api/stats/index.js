@@ -37,9 +37,9 @@ async function apy(ctx) {
 
     const [fryApys, cakeApy, cakeLpApy, syrupApy] = await Promise.all([
       getFryApys(), 
-      getBaseCakeApy(), 
-      getCakeLpApys(), 
-      getCakeApys()
+      // getBaseCakeApy(), 
+      // getCakeLpApys(), 
+      // getCakeApys()
     ]);
   
     console.log('index', 'AFTER:', Date.now());

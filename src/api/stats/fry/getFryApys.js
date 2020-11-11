@@ -51,6 +51,8 @@ const getPoolRewardsPercentage = async (poolIndex, fryerAddr) => {
   const fryerContract = new web3.eth.Contract(DeepFryer, fryerAddr);
   const poolLength = await fryerContract.methods.poolLength().call();
 
+  console.log('poolLength', poolLength);
+
   let totalRewardPoints = new BigNumber('0');
   let poolRewardPoints;
 
