@@ -14,13 +14,16 @@ const web3 = new Web3(process.env.BSC_RPC);
 const getFryApys = async () => {
   const apys = {};
 
+  // TODO: run in parallel
   for (const pool of pools) {
-    const yearlyRewardsInUsd = await getYearlyRewardsInUsd(FRYER, 1);
-    const poolRewardsPercentage = await getPoolRewardsPercentage(pool.poolIndex, FRYER);
+    
+    const [yearlyRewardsInUsd, poolRewardsPercentage, totalStakedInUsd] = await Promise.all([
+      getYearlyRewardsInUsd(FRYER, 1),
+      getPoolRewardsPercentage(pool.poolIndex, FRYER),
+      getTotalStakedInUsd(FRYER, pool.asset, pool.oracle, pool.oracleId, pool.decimals)
+    ]);
+
     const yearlyPoolRewardsInUsd = yearlyRewardsInUsd.times(poolRewardsPercentage);
-
-    const totalStakedInUsd = await getTotalStakedInUsd(FRYER, pool.asset, pool.oracle, pool.oracleId, pool.decimals);
-
     const apy = yearlyPoolRewardsInUsd.dividedBy(totalStakedInUsd);
     apys[pool.name] = apy;
   }

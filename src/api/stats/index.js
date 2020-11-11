@@ -12,59 +12,51 @@ const TIMEOUT = 5 * 60 * 1000;
 async function apy(ctx) {
   try {
     ctx.request.socket.setTimeout(TIMEOUT);
-
-    const resSimple = await axios.get(process.env.FORTUBE_REQ_TOKENS);
-    const resExtended = await axios.get(process.env.FORTUBE_REQ_MARKETS, {
-      headers: {
-        authorization: process.env.FORTUBE_API_TOKEN,
-      },
-    });
-
-    const dataSimple = resSimple.data;
-    const dataExtended = resExtended.data.data;
-
+    
     let apys = {};
 
-    Object.values(dataSimple).map(item => {
+    console.log('index', 'BEFORE:', Date.now());
+
+    // Fortube
+    const [resSimple, resExtended] = await Promise.all([
+      axios.get(process.env.FORTUBE_REQ_TOKENS),
+      axios.get(process.env.FORTUBE_REQ_MARKETS, { headers: {authorization: process.env.FORTUBE_API_TOKEN}})
+    ]);
+
+    Object.values(resSimple.data).map(item => {
       const symbol = item.symbol.toLowerCase();
       const apy = compound(parseFloat(item.estimated_ar), process.env.FORTUBE_HPY, 1, 0.95);
       apys[`fortube-${symbol}`] = apy;
     });
 
-    dataExtended.map(item => {
+    resExtended.data.data.map(item => {
       apys[`fortube-${item.token_symbol.toLowerCase()}`] += parseFloat(item.deposit_interest_rate);
     });
 
-    console.log('BEFORE:', Date.now());
+    console.log('index', 'FORTUBE:', Date.now());
 
-    const apy = {};
-    const values = await Promise.all([
+    const [fryApys, cakeApy, cakeLpApy, syrupApy] = await Promise.all([
       getFryApys(), 
       getBaseCakeApy(), 
       getCakeLpApys(), 
       getCakeApys()
     ]);
   
-    apy.fry = values[0];
-    apy.cake = values[1];
-    apy.cakeLp = values[2];
-    apy.syrup = values[3];
-  
-    console.log('AFTER:', Date.now());
+    console.log('index', 'AFTER:', Date.now());
 
     // Compound
-    apys['fry-burger-v2'] = compound(apy.fry.burger, process.env.FRY_HPY, 1, 0.95);
+    apys['fry-burger-v2'] = compound(fryApys.burger, process.env.FRY_HPY, 1, 0.95);
     
-    apys['cake-cake'] = compound(apy.cake, process.env.CAKE_HPY, 1, 0.94);
+    apys['cake-cake'] = compound(cakeApy, process.env.CAKE_HPY, 1, 0.94);
 
-    apys['cake-cake-bnb'] = compound(apy.cakeLp['cake-cake-bnb'], process.env.CAKE_LP_HPY, 1, 0.955);
-    apys['cake-busd-bnb'] = compound(apy.cakeLp['cake-busd-bnb'], process.env.CAKE_LP_HPY, 1, 0.955);
-    apys['cake-usdt-busd'] = compound(apy.cakeLp['cake-usdt-busd'], process.env.CAKE_LP_HPY, 1, 0.955);
-    apys['cake-btcb-bnb'] = compound(apy.cakeLp['cake-btcb-bnb'], process.env.CAKE_LP_HPY, 1, 0.955);
+    apys['cake-cake-bnb'] = compound(cakeLpApy['cake-cake-bnb'], process.env.CAKE_LP_HPY, 1, 0.955);
+    apys['cake-busd-bnb'] = compound(cakeLpApy['cake-busd-bnb'], process.env.CAKE_LP_HPY, 1, 0.955);
+    apys['cake-usdt-busd'] = compound(cakeLpApy['cake-usdt-busd'], process.env.CAKE_LP_HPY, 1, 0.955);
+    apys['cake-btcb-bnb'] = compound(cakeLpApy['cake-btcb-bnb'], process.env.CAKE_LP_HPY, 1, 0.955);
     
-    apys['cake-hard'] = compound(apy.syrup['cake-hard'], process.env.CAKE_HPY, 1, 0.94);    
-    apys['cake-broobee'] = compound(apy.syrup['cake-broobee'], process.env.CAKE_HPY, 1, 0.94);
-    apys['cake-stax'] = compound(apy.syrup['cake-stax'], process.env.CAKE_HPY, 1, 0.94);
+    apys['cake-hard'] = compound(syrupApy['cake-hard'], process.env.CAKE_HPY, 1, 0.94);    
+    apys['cake-broobee'] = compound(syrupApy['cake-broobee'], process.env.CAKE_HPY, 1, 0.94);
+    apys['cake-stax'] = compound(syrupApy['cake-stax'], process.env.CAKE_HPY, 1, 0.94);
 
     // FIXME: deprecated pools
     apys['cake-syrup-ctk'] = 0;
