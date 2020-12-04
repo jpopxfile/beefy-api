@@ -31,6 +31,9 @@ const getPoolApy = async (bakeryMaster, pool) => {
   ]);
   const simpleApy = yearlyRewardsInUsd.dividedBy(totalStakedInUsd);
   const apy = compound(simpleApy, process.env.BAKE_LP_HPY, 1, 0.955);
+
+  console.log('pool:', pool.name, Number(simpleApy).toFixed(3), apy);
+
   return { [pool.name]: apy };
 };
 
