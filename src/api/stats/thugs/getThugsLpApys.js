@@ -31,6 +31,7 @@ const getPoolApy = async (gangster, pool) => {
     getTotalStakedInUsd(gangster, pool),
   ]);
   const simpleApy = yearlyRewardsInUsd.dividedBy(totalStakedInUsd);
+  console.log(pool.name, simpleApy.toString());
   const apy = compound(simpleApy, process.env.THUGS_LP_HPY, 1, 0.94);
   return { [pool.name]: apy };
 };
@@ -40,7 +41,7 @@ const getYearlyRewardsInUsd = async (gangster, pool) => {
   const gangsterContract = new web3.eth.Contract(OriginalGangster, gangster);
 
   const multiplier = new BigNumber(
-    await gangsterContract.methods.getMultiplier(blockNum - 1, blockNum).call()
+    await gangsterContract.methods.getMultiplier(blockNum, blockNum + 1).call()
   );
   const blockRewards = new BigNumber(await gangsterContract.methods.drugsPerBlock().call());
 
@@ -61,6 +62,7 @@ const getYearlyRewardsInUsd = async (gangster, pool) => {
     'thugs',
     '0x339550404Ca4d831D12B1b2e4768869997390010_0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c'
   );
+
   const yearlyRewardsInUsd = yearlyRewards.times(drugsPrice).dividedBy('1e18');
 
   return yearlyRewardsInUsd;
