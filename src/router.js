@@ -8,11 +8,13 @@ const stats = require('./api/stats');
 const price = require('./api/price');
 const proxy = require('./api/proxy');
 const gov = require('./api/stats/gov');
+const vault = require('./api/stats/vault');
 const smart = require('./api/smart');
 
 router.get('/supply', stats.supply);
 router.get('/apy', stats.apy);
 router.get('/earnings', gov.dailyEarn);
+router.get('/harvests', vault.lastHarvest);
 router.get('/smart', smart.getSmartcakeData);
 
 router.get('/pancake/price', proxy.pancake);

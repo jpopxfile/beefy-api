@@ -1,0 +1,214 @@
+[
+    {
+        "vaultAddr": "0xf7069e41C57EcC5F122093811d8c75bdB5f7c14e",
+        "stratAddr": "0x92F347AdB3a2c3FD336DCE60242cde126711b9a3"
+    },
+    {
+        "vaultAddr": "0xB0BDBB9E507dBF55f4aC1ef6ADa3E216202e06FD",
+        "stratAddr": "0xBD8ad0F6492DA660f506fB65f049A5DA4b894a27"
+    },
+    {
+        "vaultAddr": "0x8AE31751A226B0C5357a377E53B6DB12bDF5e64d",
+        "stratAddr": "0xc641bFAAA6D78e506F4f58d5b2b0ce911DBB9a82"
+    },
+    {
+        "vaultAddr": "0x502AB55Cf22f38c4fd8663dEE041A96B72264c53",
+        "stratAddr": "0xf5d90f1b58927DCCedb741C9848c981372e86774"
+    },
+    {
+        "vaultAddr": "0xc713ca7cb8edfE238ea652D772d41dde47A9a62d",
+        "stratAddr": "0x229959480e7dc01B0F73d492101f8745EF4d4Ada"
+    },
+    {
+        "vaultAddr": "0x498515AB07d72d24A85343322834a66e79e146f8",
+        "stratAddr": "0x14FCa2E3337eB956d9c810652216EFe147E0CEF8"
+    },
+    {
+        "vaultAddr": "0x9D729179E429153a6aca26389e6a9b625431C79B",
+        "stratAddr": "0x87f86C9D9676A77aCC068528AB934B5CbBFe9479"
+    },
+    {
+        "vaultAddr": "0xe789711992020575e07381fdb3dFDc251Ec4d027",
+        "stratAddr": "0x82FCd3c30E8353e432c5F2Da10eE586015717B00"
+    },
+    {
+        "vaultAddr": "0x3DbBDFA0A412Fd15ef9fc4CEb3Fcc19Ff329980b",
+        "stratAddr": "0x4fB6fA862081796fe22f9D527A27dE6e2779Be59"
+    },
+    {
+        "vaultAddr": "0x1bcc82ce9b387E16fC383af563fd400074E3f060",
+        "stratAddr": "0xB5968312cEBED11E5DDF7b3b56c28Ae084d290C7"
+    },
+    {
+        "vaultAddr": "0x68aE2aB6448884714DDf11C8d55ea7578C65D502",
+        "stratAddr": "0xe79fF4C4E1D78a483C63583330dCC7319f05aFDf"
+    },
+    {
+        "vaultAddr": "0x29C36e5fcB1dC4a3D4B46C00F82b2cee39c5540e",
+        "stratAddr": "0x6A164e8DF6F554Cb2C9F4CF9a407E799b60fF497"
+    },
+    {
+        "vaultAddr": "0x5EA6fE190f9F7B814fDc438A6CC448d094740588",
+        "stratAddr": "0x70aEf5d199fDfaAC5A81747C8b7C91F77f2B6F54"
+    },
+    {
+        "vaultAddr": "0x2091b25f02275a4D791075f83c904Fa5Fb96B5A7",
+        "stratAddr": "0x19A246CE9698eEEf9a6C851C034f6f3E71E4902f"
+    },
+    {
+        "vaultAddr": "0x3CAd2fF669865359b80a2d948A10e1810f7486D7",
+        "stratAddr": "0x0042Fb96b4Ef358b65F8d11c8D7d703C41c2d1b3"
+    },
+    {
+        "vaultAddr": "0x390f28E3919D2c4d9624Ae9AeBe6da25322ED56D",
+        "stratAddr": "0x9204F0d9aC07c839fbCb0c22c326ccef51A8Aba4"
+    },
+    {
+        "vaultAddr": "0xaC112E7744C129ae54E65F5D2cb4eA472E08eA0B",
+        "stratAddr": "0xf35FE19042190C5135D1452E188131FA0243cA81"
+    },
+    {
+        "vaultAddr": "0x5Bea18aBa4825bbE6450c280fBE8c22B1489cDd4",
+        "stratAddr": "0x201F67420C509Bc135a527D25260e09DFba25C68"
+    },
+    {
+        "vaultAddr": "0xd4572009c7580DEfa0251FFD811b04386Dd41570",
+        "stratAddr": "0x21428EABd16a2610f6b7221B0FE2Ab7Eb903088a"
+    },
+    {
+        "vaultAddr": "0x0adc208151e6b7AE1D884b64fDA662d10B4F6174",
+        "stratAddr": "0xc898F4ee9F3194d6Ed8B8D0E567100cE8038Eb57"
+    },
+    {
+        "vaultAddr": "0x3e1B60EB79b17d41F8E268936d853A43BEA24259",
+        "stratAddr": "0x31bd4354066B48D662aA472A5851FeD51030c147"
+    },
+    {
+        "vaultAddr": "0x3b2c93f9455786e74C68648EaaB09B20ce557537",
+        "stratAddr": "0x03368dFCFa37f89ef10Bab2501350FD7e20b2D6a"
+    },
+    {
+        "vaultAddr": "0x7bF55acDe006C398Bb605Ae564A8F832F80000ee",
+        "stratAddr": "0x97c16Baf08f10bEa1B0E0Cd38D9aEEc282632d84"
+    },
+    {
+        "vaultAddr": "0xaB9C4a0fD179315b005a5f6D3793cb30Af718152",
+        "stratAddr": "0x091F3E6Bb027091A7256796675cc675818a25D31"
+    },
+    {
+        "vaultAddr": "0xD16Aef70403f1Fbf710C6A73EBb7c4FaA983d59a",
+        "stratAddr": "0x55c5280251DAd26fB6C1d175eb33Aa201aC1B9E0"
+    },
+    {
+        "vaultAddr": "0x260879777DB293541DbC9a27c3C2fAD9c9bb48D3",
+        "stratAddr": "0xb64A810e2E073293FbaB16ec0f5A948518FB1b8d"
+    },
+    {
+        "vaultAddr": "0x2fd5f579e2cF9e3cb8127BBAd1B52c25750b1aCE",
+        "stratAddr": "0x7FBA53a4DB251C4364998631E6e88b4445bF21C0"
+    },
+    {
+        "vaultAddr": "0x84d95337c83B84688DFE678117e1539786f8c4Cb",
+        "stratAddr": "0x7f4deaca74a6aBbc573FB8FDf244D6d0e4c07976"
+    },
+    {
+        "vaultAddr": "0x5417f74221abD485C34429eb90EBA100FAC9A6e1",
+        "stratAddr": "0x5C3847e558a82af69ab2aCe7A8eCe39E3d81A861"
+    },
+    {
+        "vaultAddr": "0xD6fca61Edb1cD0259320A6E0899E8aD1044BBCda",
+        "stratAddr": "0xceeA52d3B8af005e87b309B8620038d5dA4cFCda"
+    },
+    {
+        "vaultAddr": "0x72F758cb79cA71CE9010dc9c0fA0155431435B72",
+        "stratAddr": "0xbA7E0199FEB4D2d69ABC66A77E055e0a57123C5C"
+    },
+    {
+        "vaultAddr": "0xc87049670329a82724e7135A26c73c3496a1Db23",
+        "stratAddr": "0xe9C7B989214e2eA2C52394f4Ccffc92fb536b061"
+    },
+    {
+        "vaultAddr": "0x06fb2e27155c2a551aF34E80aE67f569673dDD73",
+        "stratAddr": "0x8329ef7D376389F20F4f8CB8279f5D02dcC3CB23"
+    },
+    {
+        "vaultAddr": "0x6F0Df0858542fC4A1c7f82c14fAA490d7763592F",
+        "stratAddr": "0x3bb71a7C10Efe5FA47B5fE5B8A9162102F33fEb8"
+    },
+    {
+        "vaultAddr": "0xB1B91AA761F552FEF29A50643D0F93690082960F",
+        "stratAddr": "0x6663aec74F26322C9E04A64417d146Fb52FE10B6"
+    },
+    {
+        "vaultAddr": "0xcB60700DB502F9908B8656C38D052c1BD54D291c",
+        "stratAddr": "0x7b8056527faF16FF0BF2742A79Fe3b1C9A27fD7e"
+    },
+    {
+        "vaultAddr": "0x179701FD814F17838605c1990EDA96C1EbeC984e",
+        "stratAddr": "0x3661576d5Ecc42b7aA84b0749d8d3180eE6D1Be4"
+    },
+    {
+        "vaultAddr": "0x0c36Bee5cF5E5b1BE5371574cEBF9A5f01DE5Fc4",
+        "stratAddr": "0x320E9bbe84277dcB61B262c47beBEC815eb29431"
+    },
+    {
+        "vaultAddr": "0x63a2CEF28904956552714ddb226ceE96c3F0C9EF",
+        "stratAddr": "0x419795e7743576aaf587bD84631363D577be5153"
+    },
+    {
+        "vaultAddr": "0x1CfEAef83Bb688Ac5926df1feEB8F05244054C07",
+        "stratAddr": "0xC4c6d4Aee9fb3A4D9aAc769f8a937802E8c9e93E"
+    },
+    {
+        "vaultAddr": "0xc16187F3eb15aEE949e7d784906d53fd7E364B26",
+        "stratAddr": "0xD3dBcd17d2f48C9BC937D3fADF3Ded5966878dD7"
+    },
+    {
+        "vaultAddr": "0x7A99078ba8960871233377C7aE6B5d2A61229A43",
+        "stratAddr": "0xb506bEF03ec669f122c0F276e3848239aB829Dbb"
+    },
+    {
+        "vaultAddr": "0x6c98707D6F3e0909E377A0Db7ef7895098076ec3",
+        "stratAddr": "0x739De818f06E8CBb716C7FC3139A1F760a44AAD8"
+    },
+    {
+        "vaultAddr": "0xbB63c8858b64a856d79A80575Df60867622E4782",
+        "stratAddr": "0xd4402810E985F0A1AB4cDB15cEc3c6c217F9e730"
+    },
+    {
+        "vaultAddr": "0xCa6e313C535B6C355bEeAae296B58a194C3D6044",
+        "stratAddr": "0xceA24d77AEB7C250be8F0F72F5Aab307cc3A6f1E"
+    },
+    {
+        "vaultAddr": "0x4B4e5F2CeEdfF00D2DD13874714C1Ef6Ea1Cd8a7",
+        "stratAddr": "0x6b7b6742a98287478C701467a4bcd1521D46e984"
+    },
+    {
+        "vaultAddr": "0xa4aB709f5eB75f3213734fC227D9e27352d1DB6c",
+        "stratAddr": "0x8Bc142d8c30280950dA80cf9681311a55eb6EA8b"
+    },
+    {
+        "vaultAddr": "0x348039C69B5fD7b333CE0a17E8361E501D2e3fa8",
+        "stratAddr": "0x143F7d08B4AEB964662c590d52348BC65E831375"
+    },
+    {
+        "vaultAddr": "0xA2bcB1D7955AEa2F5B93C308E199337a77E7bAd4",
+        "stratAddr": "0x6f675Be4ba9f77CDCF94733Ea84a9bcd3e3D6704"
+    },
+    {
+        "vaultAddr": "0xa72D14bec8c37f3A9487B057C7635e55f85f50c4",
+        "stratAddr": "0x6e935DF92dEfe84850265eBC49E04a653C8a4bf4"
+    },
+    {
+        "vaultAddr": "0xd9542B833C6B0D9E4f882d2c4F01d5b5bd005Ac7",
+        "stratAddr": "0xf2E87DDE08679Bb7860dF108e93611dC02F3f8A4"
+    },
+    {
+        "vaultAddr": "0x23293B8A7c65aF396Bda8Ff75E02c62f6db8f202",
+        "stratAddr": "0xF0D037813e4bCC21E4ED38F2fA506522181699Bb"
+    },
+    {
+        "vaultAddr": "0x4480A061130c56b58E8Fa9adeC5BBbB9609122dB",
+        "stratAddr": "0xD49A658C16c3F836C47faF9AaE9011A0CE06C295"
+    }
+]
